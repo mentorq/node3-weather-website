@@ -9,6 +9,8 @@ const { response } = require('express')
 
 const app = express()
 
+const port = process.env.PORT || 3000
+
 // Define paths for Express config
 const viewsPath = path.join(__dirname, '../templates/views')
 const publicDirectoryPath = path.join(__dirname, '../public')
@@ -105,6 +107,6 @@ app.get('*', (req, res) => {
         errorMessage: 'This page does not exists'
     })
 })
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
 })
